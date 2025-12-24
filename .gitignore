@@ -1,0 +1,3 @@
+# do not check in machine sepcific configs
+hyprpaper.conf
+hyprlocal.conf
