@@ -10,7 +10,7 @@
 #waybar {
     background: transparent;
     color: #c6d0f5;
-    margin: 2px 2px;
+    margin: 5px 5px;
 }
 
 #workspaces {
@@ -50,7 +50,6 @@
     background-color: #101010;
     padding: 0.5rem 1rem;
     margin: 5px 0;
-    border-radius: 0px 5px 5px 0px;
 }
 
 #memory {
@@ -58,7 +57,7 @@
 }
 
 #clock {
-    color: #8caaee;
+    color: #babbf1;
     border-radius: 5px;
     margin-right: 1rem;
 }
@@ -86,13 +85,8 @@
 
 #pulseaudio {
     color: #ea999c;
-    border-radius: 5px 0px 0px 5%;
+    border-radius: 5px 0px 0px 5px;
     margin-left: 1rem;
-}
-
-#custom-music {
-    color: #ca9ee6;
-    border-radius: 5px;
 }
 
 #custom-lock {

@@ -23,9 +23,18 @@
     "spacing": 10,
   },
   "clock": {
-    "timezone": "America/NewYork",
+    "timezone": "America/New_York",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format": "{:%d - %H:%M}",
+    "calendar": {
+      "mode-mon-col": 3,
+      "format": {
+        "today": "<span color='#99d1db'>{}</span>",
+      },
+    },
+    "actions": {
+      "on-click-right": "mode",
+    },
   },
   "network": {
     "format-wifi": "󰤢 ",
@@ -50,9 +59,5 @@
       "default": ["", "", " "],
     },
     "on-click": "pavucontrol",
-  },
-  "battery": {
-    "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
-    "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
   },
 }
