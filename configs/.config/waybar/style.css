@@ -46,14 +46,11 @@
 #cpu,
 #memory,
 #custom-lock,
-#custom-power {
+#custom-power,
+#custom-gdm-switch {
     background-color: #101010;
     padding: 0.5rem 1rem;
     margin: 5px 0;
-}
-
-#memory {
-    border-radius: 0px 5px 5px 0px;
 }
 
 #clock {
@@ -89,8 +86,8 @@
     margin-left: 1rem;
 }
 
-#custom-lock {
-    border-radius: 5px 0px 0px 5px;
+#custom-gdm-switch {
+    border-radius: 0px 5px 5px 0px;
     color: #babbf1;
 }
 

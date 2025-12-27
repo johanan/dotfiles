@@ -10,6 +10,7 @@
     "cpu",
     "memory",
     "tray",
+    "custom/gdm-switch",
   ],
   "hyprland/workspaces": {
     "format": "{name}: {icon}",
@@ -59,5 +60,11 @@
       "default": ["", "", " "],
     },
     "on-click": "pavucontrol",
+  },
+  "custom/gdm-switch": {
+    "format": "󰍃",
+    "tooltip": true,
+    "tooltip-format": "Switch User",
+    "on-click": "gdmflexiserver",
   },
 }
