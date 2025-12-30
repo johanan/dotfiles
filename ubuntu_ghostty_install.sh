@@ -14,6 +14,7 @@ cd ghostty-1.2.3
 
 # Fix the outdated .iterm2_themes block in build.zig.zon
 # Fetch the latest build.zig.zon from main branch
+# https://github.com/ghostty-org/ghostty/issues/9606
 wget -O build.zig.zon.main https://raw.githubusercontent.com/ghostty-org/ghostty/main/build.zig.zon
 
 # Extract the .iterm2_themes block from the main branch version
