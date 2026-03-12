@@ -16,17 +16,17 @@ echo "Installing hyprlock..."
 # Install dependencies
 echo "Installing cmake and build dependencies..."
 sudo apt update
-sudo apt install -y cmake build-essential libgbm-dev libdrm-dev mesa-common-dev libegl1-mesa-dev libgles2-mesa-dev hyprland-dev libpugixml-dev libwayland-dev libwayland-egl-backend-dev wayland-protocols libcairo2-dev libpango1.0-dev libpam0g-dev libsystemd-dev libjpeg-dev libwebp-dev libmagic-dev meson librsvg2-dev libinput-dev libseat-dev libdisplay-info-dev
+sudo apt install -y cmake build-essential libgbm-dev libdrm-dev mesa-common-dev libegl1-mesa-dev libgles2-mesa-dev hyprland-dev libpugixml-dev libwayland-dev libwayland-egl-backend-dev wayland-protocols libcairo2-dev libpango1.0-dev libpam0g-dev libsystemd-dev libjpeg-dev libwebp-dev libmagic-dev meson librsvg2-dev libinput-dev libseat-dev libdisplay-info-dev libmuparser-dev
 sudo apt install -y libzip-dev libtomlplusplus-dev libxcursor-dev libre2-dev libxcb-xfixes0-dev libxcb-icccm4-dev libxcb-composite0-dev libxcb-res0-dev libxcb-errors-dev libxml2-dev libxcb1-dev libxcb-xkb-dev bison flex libiniparser-dev
 
 # Create temporary directory for source
 TEMP_DIR=$(mktemp -d)
 cd "$TEMP_DIR"
 
-# Build libxkbcommon from source (need version 1.11.0+ for xkb v2 format)
-if ! pkg-config --exists "xkbcommon >= 1.11.0" 2>/dev/null; then
+# Build libxkbcommon from source (need version 1.13.1+ for xkb v2 format)
+if ! pkg-config --exists "xkbcommon >= 1.13.1" 2>/dev/null; then
   echo "Building libxkbcommon..."
-  git clone --depth 1 --branch xkbcommon-1.11.0 https://github.com/xkbcommon/libxkbcommon.git
+  git clone --depth 1 --branch xkbcommon-1.13.1 https://github.com/xkbcommon/libxkbcommon.git
   cd libxkbcommon
   meson setup build -Denable-docs=false -Denable-wayland=true -Denable-x11=true
   meson compile -C build
@@ -34,7 +34,7 @@ if ! pkg-config --exists "xkbcommon >= 1.11.0" 2>/dev/null; then
   sudo ldconfig
   cd ..
 else
-  echo "libxkbcommon >= 1.11.0 already installed"
+  echo "libxkbcommon >= 1.13.1 already installed"
 fi
 
 # Build hyprwayland-scanner from source (need version 0.4.4+)
@@ -64,9 +64,9 @@ else
 fi
 
 # Build hyprlang
-if ! pkg-config --exists "hyprlang >= 0.6.3" 2>/dev/null; then
+if ! pkg-config --exists "hyprlang >= 0.6.8" 2>/dev/null; then
   echo "Building hyprlang..."
-  git clone --depth 1 --branch v0.6.4 https://github.com/hyprwm/hyprlang.git
+  git clone --depth 1 --branch v0.6.8 https://github.com/hyprwm/hyprlang.git
   cd hyprlang
   cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -S . -B ./build
   cmake --build ./build --config Release -j$(nproc 2>/dev/null || getconf _NPROCESSORS_CONF)
@@ -77,9 +77,9 @@ else
 fi
 
 # Build hyprgraphics
-if ! pkg-config --exists "hyprgraphics >= 0.4.0" 2>/dev/null; then
+if ! pkg-config --exists "hyprgraphics >= 0.5.0" 2>/dev/null; then
   echo "Building hyprgraphics..."
-  git clone --depth 1 --branch v0.4.0 https://github.com/hyprwm/hyprgraphics.git
+  git clone --depth 1 --branch v0.5.0 https://github.com/hyprwm/hyprgraphics.git
   cd hyprgraphics
   cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -S . -B ./build
   cmake --build ./build --config Release -j$(nproc 2>/dev/null || getconf _NPROCESSORS_CONF)
@@ -139,9 +139,9 @@ else
 fi
 
 # Build sdbus-c++
-if ! pkg-config --exists "sdbus-c++ >= 2.1.0" 2>/dev/null; then
+if ! pkg-config --exists "sdbus-c++ >= 2.2.1" 2>/dev/null; then
   echo "Building sdbus-c++..."
-  git clone --depth 1 --branch v2.1.0 https://github.com/Kistler-Group/sdbus-cpp.git
+  git clone --depth 1 --branch v2.2.1 https://github.com/Kistler-Group/sdbus-cpp.git
   cd sdbus-cpp
   cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -S . -B ./build
   cmake --build ./build --config Release -j$(nproc 2>/dev/null || getconf _NPROCESSORS_CONF)

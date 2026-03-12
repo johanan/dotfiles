@@ -40,8 +40,8 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 gtk-titlebar = true
-theme = One Double Dark
-quit-after-last-window-closed = true
-font-family = FiraMono Nerd Font
+theme = Dracula
+quit-after-last-window-closed = false
+font-family = FiraCode Nerd Font
 background-opacity=0.95
 keybind = shift+enter=text:\n

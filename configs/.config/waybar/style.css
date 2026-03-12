@@ -1,5 +1,5 @@
 * {
-    font-family: FiraMono Nerd Font;
+    font-family: FiraCode Nerd Font Propo;
     font-size: 20px;
     min-height: 0;
     padding-right: 2px;
@@ -15,9 +15,8 @@
 
 #workspaces {
     border-radius: 5px;
-    margin: 5px;
+    margin: 8px;
     background: #101010;
-    margin-left: 1rem;
 }
 
 #workspaces button {
@@ -87,6 +86,7 @@
 }
 
 #custom-gdm-switch {
+    margin-right: 8px;
     border-radius: 0px 5px 5px 0px;
     color: #babbf1;
 }

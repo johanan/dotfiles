@@ -33,4 +33,7 @@ cd ghostty-1.3.0
 # # Clean up the downloaded main branch file
 # rm build.zig.zon.main
 
-zig build -p $HOME/.local -Doptimize=ReleaseFast
+zig build -p $HOME/.local -Doptimize=ReleaseFast -fsys=fontconfig
+
+# start ghostty on login
+systemctl enable --user app-com.mitchellh.ghostty.service
